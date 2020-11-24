@@ -107,6 +107,7 @@ $route['update-cart-qty-payment'] = 'Cart/update_cart_quantity_payment';
 $route['delete-to-cart-payment/(.+)'] = 'Cart/delete_to_cart_payment/$1';
 // Checkout
 $route['checkout'] = 'Checkout/checkout';
+$route['cu-login'] = 'Checkout/cu_login';
 $route['customer-registration'] = 'Checkout/customer_registration';
 $route['customer-login'] = 'Checkout/customer_login';
 $route['billing'] = 'Checkout/billing';

@@ -54,8 +54,8 @@
                         <div class="navbar-nav mr-auto">
                             <a href="Home" class="nav-item nav-link active">Home</a>
                             <a href="<?php echo base_url()?>products" class="nav-item nav-link">Products</a>
-                            <a href="<?php echo base_url()?>product-details" class="nav-item nav-link">Product Detail</a>
-                            <a href="cart.html" class="nav-item nav-link">Cart</a>
+                            <!-- <a href="<?php echo base_url()?>product-details" class="nav-item nav-link">Product Detail</a> -->
+                            <a href="show-cart" class="nav-item nav-link">Cart</a>
                             <a href="checkout.html" class="nav-item nav-link">Checkout</a>
                             <a href="my-account.html" class="nav-item nav-link">My Account</a>
                             <div class="nav-item dropdown">
@@ -71,7 +71,7 @@
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Account</a>
                                 <div class="dropdown-menu">
-                                    <a href="#" class="dropdown-item">Login</a>
+                                    <a href="<?php echo base_url()?>cu-login" class="dropdown-item">Login</a>
                                     <a href="#" class="dropdown-item">Register</a>
                                 </div>
                             </div>

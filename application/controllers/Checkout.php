@@ -9,8 +9,15 @@ class Checkout extends CI_Controller {
 	}
 	public function checkout(){
 		$data['main_content'] = $this->load->view('front/checkout','',true);
-		$this->load->view('front/index',$data);
+		//$this->load->view('front/index',$data);
+		$this->load->view('front/checkout',$data);
 	}
+	public function cu_login(){
+		$data['main_content'] = $this->load->view('front/cu_login','',true);
+		//$this->load->view('front/index',$data);
+		$this->load->view('front/cu_login',$data);
+	}
+
 	public function customer_registration(){
 		
 	 $this->form_validation->set_rules('cus_name', 'Customer Name', 'trim|required|min_length[5]');
@@ -61,7 +68,8 @@ class Checkout extends CI_Controller {
 		$customer_id= $this->session->userdata("cus_id");
 		$data['cus_info'] = $this->CheckoutModel->select_customer_info_by_id($customer_id);
 		$data['main_content'] = $this->load->view('front/billing',$data,true);
-		$this->load->view('front/index',$data);
+		//$this->load->view('front/index',$data);
+		$this->load->view('front/billing',$data);
 	}
 	public function shipping(){
 		 

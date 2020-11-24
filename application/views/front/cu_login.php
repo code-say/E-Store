@@ -58,9 +58,9 @@
                         <div class="login-form">
                             <div class="row">
                                 <h2>Login to your account</h2>
-                                <h4 style='color:red'>
-                             <?php echo $this->session->flashdata('flash_msg'); ?> 
-                           </h4>
+                                <!-- <h4 style='color:red'>
+                             <?php// echo $this->session->flashdata('flash_msg'); ?> 
+                           </h4> -->
 
 
 
