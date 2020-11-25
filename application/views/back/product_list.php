@@ -33,6 +33,7 @@
                                     <th>Product Image</th>
                                     <th>Product Status</th>
                                     <th>Product Availability</th>
+                                    <th>Product Quantity</th>
                                     <th>Product Price</th>
                                     <th>Action</th>
                                 </tr>
@@ -66,6 +67,7 @@
                                             echo "Up Coming";
                                        }?>
                                     </td>
+                                    <td><?php echo $value->pro_quantity;?></td>
                                     <td><?php echo $value->pro_price;?></td>
                                    <td>
                                         <a class="btn btn-info" href="<?php echo base_url()?>edit-product/<?php echo $value->pro_id?>">Edit</a>
