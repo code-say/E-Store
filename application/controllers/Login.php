@@ -23,6 +23,7 @@ class Login extends CI_Controller {
 				$session_data['useremail']	= $user_details->user_email;
 				$session_data['userrole'] 	= $user_details->user_role;
 				$session_data['userstatus']	= $user_details->user_status;
+				$session_data['user_photo']	= $user_details->user_photo;
 				$this->session->set_userdata($session_data);
 				redirect("Admin");
 			} else {

@@ -5,7 +5,7 @@
         <div class="breadcrumb-wrap">
             <div class="container-fluid">
                 <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="<?php echo base_url();?>">Home</a></li>
                     <li class="breadcrumb-item"><a href="#">Products</a></li>
                     <li class="breadcrumb-item active">Cart</li>
                 </ul>
@@ -32,6 +32,7 @@
                                     </thead>
                                     <tbody class="align-middle">
                                         <?php $cart_content = $this->cart->contents();?>
+                                        <?php if(count($cart_content)!=0){?>
                                         <?php foreach ($cart_content as $items){ ?>
                                         <tr>
                                             <td>
@@ -50,7 +51,8 @@
                                                     <form action="<?php echo base_url()?>update-cart-qty" method="post">
                                                         <button class="btn-plus"><i class="fa fa-plus"></i></button>
                                                         <input class="" type="text" name="qty" value="<?php echo $items['qty']?>" autocomplete="off" >
-                                                        <button class="btn-minus"><i class="fa fa-minus"></i></button>
+                                                        <input  type="hidden" name="rowid" value="<?php echo $items['rowid']?>">
+                                                        <button type="submit" class="btn-minus"><i class="fa fa-minus"></i></button>
                                                        
                                                         <!-- <input  type="submit"  value="Update"/> -->
 
@@ -63,79 +65,8 @@
                                             <td><a class="btn" href="<?php echo base_url()?>delete-to-cart/<?php echo $items['rowid']?>"><i class="fa fa-trash"></i></a></td>
                                         </tr>
 
-                                        <?php } ?>
-                                   <!--      <tr>
-                                            <td>
-                                                <div class="img">
-                                                    <a href="#"><img src="img/product-2.jpg" alt="Image"></a>
-                                                    <p>Product Name</p>
-                                                </div>
-                                            </td>
-                                            <td>$99</td>
-                                            <td>
-                                                <div class="qty">
-                                                    <button class="btn-minus"><i class="fa fa-minus"></i></button>
-                                                    <input type="text" value="1">
-                                                    <button class="btn-plus"><i class="fa fa-plus"></i></button>
-                                                </div>
-                                            </td>
-                                            <td>$99</td>
-                                            <td><button><i class="fa fa-trash"></i></button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="img">
-                                                    <a href="#"><img src="img/product-3.jpg" alt="Image"></a>
-                                                    <p>Product Name</p>
-                                                </div>
-                                            </td>
-                                            <td>$99</td>
-                                            <td>
-                                                <div class="qty">
-                                                    <button class="btn-minus"><i class="fa fa-minus"></i></button>
-                                                    <input type="text" value="1">
-                                                    <button class="btn-plus"><i class="fa fa-plus"></i></button>
-                                                </div>
-                                            </td>
-                                            <td>$99</td>
-                                            <td><button><i class="fa fa-trash"></i></button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="img">
-                                                    <a href="#"><img src="img/product-4.jpg" alt="Image"></a>
-                                                    <p>Product Name</p>
-                                                </div>
-                                            </td>
-                                            <td>$99</td>
-                                            <td>
-                                                <div class="qty">
-                                                    <button class="btn-minus"><i class="fa fa-minus"></i></button>
-                                                    <input type="text" value="1">
-                                                    <button class="btn-plus"><i class="fa fa-plus"></i></button>
-                                                </div>
-                                            </td>
-                                            <td>$99</td>
-                                            <td><button><i class="fa fa-trash"></i></button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="img">
-                                                    <a href="#"><img src="img/product-5.jpg" alt="Image"></a>
-                                                    <p>Product Name</p>
-                                                </div>
-                                            </td>
-                                            <td>$99</td>
-                                            <td>
-                                                <div class="qty">
-                                                    <button class="btn-minus"><i class="fa fa-minus"></i></button>
-                                                    <input type="text" value="1">
-                                                    <button class="btn-plus"><i class="fa fa-plus"></i></button>
-                                                </div>
-                                            </td>
-                                            <td>$99</td>
-                                            <td><button><i class="fa fa-trash"></i></button></td>
-                                        </tr> -->
+                                        <?php } }else{ echo "<tr><td colspan='5'>There is no product in cart view</td></tr>"; } ?>
+                                  
                                     </tbody>
                                 </table>
                             </div>
@@ -197,6 +128,7 @@
                                             <button>Checkout</button> -->
                                             <form action="<?php echo base_url()?>update-cart-qty" method="post" >   
                                             <button type="submit" >Update Cart</button>
+                                            </form> 
                                             <?php $customer_id = $this->session->userdata('cus_id');?>
                                             <?php $shipping_id = $this->session->userdata('shipping_id');?>
                                             <?php if($this->cart->total_items()!=Null && $customer_id!=NULL && $shipping_id!=NULL){?>
@@ -206,7 +138,7 @@
                                             <?php }elseif($this->cart->total_items()!=Null){ ?>
                                             <a class="btn btn-default check_out" href="<?php echo base_url()?>checkout">Check Out</a>
                                             <?php } ?>
-                                            </form> 
+                                            
                                         </div>
                                     </div>
                                 </div>

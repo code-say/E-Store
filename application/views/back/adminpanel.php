@@ -37,7 +37,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="index.html">
-                    <h1><strong>Admin Panel</strong></h1>
+                    <h1 style="color: white;"><strong>Admin Panel</strong></h1>
                 </a>
             </div>
             <!-- end navbar-header -->
@@ -272,19 +272,23 @@
             <div class="sidebar-collapse">
                 <!-- side-menu -->
                 <ul class="nav" id="side-menu">
-                    <li>
+                    <li> <?php// $users = $this->LoginModel->checkuserlogin($useremail);?>
+                    <?php// foreach($users as $user){?>
                         <!-- user image section-->
                         <div class="user-section">
                             <div class="user-section-inner">
-                                <img src="<?php echo base_url()?>assets/back/img/user.jpg" alt="">
+
+                                <img src="<?php echo base_url().$this->session->user_photo?>" alt="fsf">
                             </div>
                             <div class="user-info">
-                                <div><?php echo $this->session->username;?></div>
+                                <div style="color: white"><?php echo $this->session->username;?></div>
+
                                 <div class="user-text-online">
                                     <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online
                                 </div>
                             </div>
                         </div>
+                         <?php// } ?>
                         <!--end user image section-->
                     </li>
                     <li class="sidebar-search">

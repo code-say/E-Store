@@ -20,6 +20,14 @@
         <link href="<?php echo base_url()?>assets/front2/lib/slick/slick-theme.css" rel="stylesheet">
 
         <!-- Template Stylesheet -->
+
+        <!-- <link href="<?php echo base_url()?>assets/front/css/price-range.css" rel="stylesheet"> -->
+      <!--   <link href="<?php echo base_url()?>assets/front/css/main.css" rel="stylesheet">
+        <link href="<?php echo base_url()?>assets/front/css/responsive.css" rel="stylesheet"> -->
+      
+
+
+
         <link href="<?php echo base_url()?>assets/front2/css/style.css" rel="stylesheet">
     </head>
 
@@ -55,26 +63,33 @@
                             <a href="Home" class="nav-item nav-link active">Home</a>
                             <a href="<?php echo base_url()?>products" class="nav-item nav-link">Products</a>
                             <!-- <a href="<?php echo base_url()?>product-details" class="nav-item nav-link">Product Detail</a> -->
-                            <a href="show-cart" class="nav-item nav-link">Cart</a>
-                            <a href="checkout.html" class="nav-item nav-link">Checkout</a>
-                            <a href="my-account.html" class="nav-item nav-link">My Account</a>
+                            <a href="<?php echo base_url()?>show-cart" class="nav-item nav-link">Cart</a>
+                            <a href="<?php echo base_url()?>checkout" class="nav-item nav-link">Checkout</a>
+                            <a href="<?php echo base_url()?>checkout" class="nav-item nav-link">My Account</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">More Pages</a>
                                 <div class="dropdown-menu">
-                                    <a href="wishlist.html" class="dropdown-item">Wishlist</a>
-                                    <a href="login.html" class="dropdown-item">Login & Register</a>
-                                    <a href="contact.html" class="dropdown-item">Contact Us</a>
+                                    <a href="<?php echo base_url()?>show-WS" class="dropdown-item">Wishlist</a>
+                                    <a href="<?php echo base_url()?>checkout" class="dropdown-item">Login & Register</a>
+                                    <a href="<?php echo base_url()?>contact-form" class="dropdown-item">Contact Us</a>
                                 </div>
                             </div>
                         </div>
                         <div class="navbar-nav ml-auto">
-                            <div class="nav-item dropdown">
+                            <!-- <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Account</a>
-                                <div class="dropdown-menu">
-                                    <a href="<?php echo base_url()?>cu-login" class="dropdown-item">Login</a>
-                                    <a href="#" class="dropdown-item">Register</a>
+                                <div class="dropdown-menu"> -->
+                                <div >
+                                    <?php $customer_id = $this->session->userdata('cus_id');?>
+                                   <?php if($customer_id){?>
+                                    <a href="<?php echo base_url()?>logout" class="nav-item nav-link">Logout</a>
+                                    <?php }else{ ?>
+                                    <a href="<?php echo base_url()?>checkout" class="nav-item nav-link">Login $ Register</a>
+                                    <?php } ?>
                                 </div>
-                            </div>
+                                  <!--   <a href="#" class="dropdown-item">Register</a> -->
+                                <!-- </div> -->
+                            <!-- </div> -->
                         </div>
                     </div>
                 </nav>
@@ -88,7 +103,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-3">
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="<?php echo base_url()?>Home">
                                 <img src="<?php echo base_url()?>assets/front2/img/logo.png" alt="Logo">
                             </a>
                         </div>

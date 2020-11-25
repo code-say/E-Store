@@ -248,6 +248,20 @@
                                 </div>
                             </div>
                         </div>
+
+        <!-- <div class="">
+            <h2>Price Range</h2>
+            <p id="amount" style="text-align:center"></p>
+            <div id="slider-range"></div>
+
+            <div class="pricerange">
+              <form method="post" action="<?php echo base_url()?>show-product-by-price-range" >
+                <input type="hidden" id="amount1" name="amount1" value="">
+                <input type="hidden" id="amount2" name="amount2" value="">
+                <input type="submit" name="submit_range" value="FILTER">
+              </form>
+            </div>
+        </div> -->
                         
                         <div class="sidebar-widget brands">
                             <h2 class="title">Our Brands</h2>

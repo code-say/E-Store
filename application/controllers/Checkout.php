@@ -48,6 +48,41 @@ class Checkout extends CI_Controller {
 			$this->checkout();//checkout means login page
 		}
 	}
+
+
+
+	public function customer_registration2(){
+		
+	 $this->form_validation->set_rules('cus_name', 'Customer Name', 'trim|required|min_length[5]');
+	// $this->form_validation->set_rules('cus_email', 'Email', 'trim|required|valid_email');
+	 $this->form_validation->set_rules('cus_email', 'Email', 'required|valid_email|is_unique[tbl_customer.cus_email]');
+	 $this->form_validation->set_rules('cus_password', 'Password', 'trim|required|min_length[8]');
+	 $this->form_validation->set_rules('con_pass', 'Password Confirmation', 'trim|required|matches[cus_password]');
+ 	if($this->form_validation->run()){
+		$customer_id = $this->CheckoutModel->save_customer_info();
+		$sdata = array();
+		$sdata['cus_id'] = $customer_id;
+		$sdata['cus_name'] = $this->input->post('cus_name');
+		$sdata['cus_email'] = $this->input->post('cus_email');
+		$sdata['cus_id'] = $this->session->set_userdata($sdata);
+		// start registration Successfull mail 
+		$mdata = array();
+		$mdata['name'] = $this->input->post('cus_name');
+		$mdata['from'] = "admin@sumon-it.com";
+		$mdata['admin_full_name'] = "sumon-it.com";
+		$mdata['to'] = $this->input->post('cus_email');
+		$mdata['subject'] = "Registration Successfull......";
+		$mdata['password'] = $this->input->post('cus_password');
+		$this->MailModel->mail_send($mdata,'registration_successfull');
+
+		// end registration successfull  mail 
+		redirect("Home/homepage");
+	}else{
+			$this->checkout();//checkout means login page
+		}
+	}
+
+
 	public function customer_login(){
 		$cus_email = $this->input->post('cus_email',true);
 		$cus_pass = md5($this->input->post('cus_password',true));
@@ -74,7 +109,8 @@ class Checkout extends CI_Controller {
 	public function shipping(){
 		 
 			$data['main_content'] = $this->load->view('front/shipping','',true);
-			$this->load->view('front/index',$data);
+			//$this->load->view('front/index',$data);
+			$this->load->view('front/shipping',$data);
 
 	}
 	public function update_billing(){
@@ -106,7 +142,8 @@ class Checkout extends CI_Controller {
 		redirect("checkout");
 	}else{
 		$data['main_content'] = $this->load->view('front/payment','',true);
-		$this->load->view('front/index',$data);
+		//$this->load->view('front/index',$data);
+		$this->load->view('front/payment',$data);
 		}
 	}
 	public function customer_logout(){
@@ -167,7 +204,7 @@ class Checkout extends CI_Controller {
 		$data['recommended'] = $this->load->view('front/recommended','',true);
 		$data['main_content'] = $this->load->view('front/order_success','',true);
 		$data['category_brand'] = $this->load->view('front/category','',true);
-		$this->load->view('front/index',$data);
+		$this->load->view('front/order_success',$data);
 	}
 	
 

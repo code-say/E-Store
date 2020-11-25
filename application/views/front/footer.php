@@ -93,19 +93,32 @@
         <!-- JavaScript Libraries -->
 
 
-        <script src="<?php echo base_url()?>assets/front/js/jquery.js"></script>
+       <!--  <script src="<?php echo base_url()?>assets/front/js/jquery.js"></script>
 
     <script src="<?php echo base_url()?>assets/front/js/jquery.scrollUp.min.js"></script>
-    <script src="<?php echo base_url()?>assets/front/js/price-range.js"></script>
+    
     <script src="<?php echo base_url()?>assets/front/js/jquery.prettyPhoto.js"></script>
-    <script src="<?php echo base_url()?>assets/front/js/jquery-ui.js"></script>
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script src="<?php echo base_url()?>assets/front/js/gmaps.js"></script>
     <script src="<?php echo base_url()?>assets/front/js/contact.js"></script>
+ -->
 
 
-    <!-- Price Range Script Start-->
-    <script type="text/javascript">  
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="<?php echo base_url()?>assets/front2/lib/easing/easing.min.js"></script>
+        <script src="<?php echo base_url()?>assets/front2/lib/slick/slick.min.js"></script>
+        <!-- <script src="<?php echo base_url()?>assets/front/js/price-range.js"></script> -->
+        
+        <!-- Template Javascript -->
+    
+       <!--  <script src="<?php echo base_url()?>assets/front/js/price-range.js"></script>
+        <script src="<?php echo base_url()?>assets/front/js/jquery-ui.js"></script> -->
+    <script src="<?php echo base_url()?>assets/front2/js/main.js"></script>
+
+
+   <!-- Price Range Script Start-->
+ <!--    <script type="text/javascript">  
  $(function() {
     $( "#slider-range" ).slider({
       range: true,
@@ -122,19 +135,7 @@
      " - $" + $( "#slider-range" ).slider( "values", 1 ) );
   });
   </script>
-
-
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <script src="<?php echo base_url()?>assets/front2/lib/easing/easing.min.js"></script>
-        <script src="<?php echo base_url()?>assets/front2/lib/slick/slick.min.js"></script>
-        
-        <!-- Template Javascript -->
-        <script src="<?php echo base_url()?>assets/front2/js/main.js"></script>
-
-
-
-
+ -->
 
 
 

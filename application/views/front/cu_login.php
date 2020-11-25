@@ -22,7 +22,7 @@
                                 <h2>New User Signup!</h2>
                                 <h5 style='color:red'> <?php echo validation_errors();?></h5>
 
-                                <form class="form-inline" action="<?php echo base_url()?>customer-registration" method="post">
+                                <form class="form-inline" action="<?php echo base_url()?>cu-registration" method="post">
                                 <div class=" form-group col-md-6">
                                     <label class="">Name</label>
                                     <input class="form-control" name="cus_name" type="text" placeholder="Name">

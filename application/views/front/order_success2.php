@@ -1,4 +1,3 @@
-<?php $this->load->view('front/header');?>   
 
 
 
@@ -12,6 +11,6 @@
 <h5 style="text-align: justify;">Thanks for purchase. Recfeive your order successfully. We will contact you ASAP with delivery details. For more details please check your registration mail.</h5>
 			
 		</div>
-	</section> <!--/#cart_items--><br><br><br>
+	</section> <!--/#cart_items-->
 
-	<?php $this->load->view('front/footer');?>   
+	

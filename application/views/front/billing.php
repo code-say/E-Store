@@ -25,50 +25,89 @@
                                 <h2>Billing Address</h2>
                                 <div class="row">
                                 <form class="form-inline" action="<?php echo base_url()?>update-billing" method="post" name="billing_info">
+
+
+
+<!-- 
+                                    <input type="text" placeholder="Name" name="cus_name" value="<?php echo $cus_info->cus_name?>">
+                                    <input type="hidden" name="cus_id" value="<?php echo $cus_info->cus_id?>">
+                                    <input type="text" placeholder="Email*" name="cus_email" value="<?php echo $cus_info->cus_email?>" readonly="">
+                                    <input type="text" placeholder="Mobile" name="cus_mobile" value="<?php echo $cus_info->cus_mobile?>">
+                                    <input type="text" placeholder="Address*" name="cus_address" value="<?php echo $cus_info->cus_address?>">
+                                    <input type="text" placeholder="City" name="cus_city" value="<?php echo $cus_info->cus_city?>">
+                                    <select name="cus_country" value="<?php echo $cus_info->cus_country?>">
+                                        <option>-- Country --</option>
+                                        <option value="United_States" >United States</option>
+                                        <option value="Bangladesh">Bangladesh</option>
+                                        <option value="UK">UK</option>
+                                        <option value="India">India</option>
+                                        <option value="Pakistan">Pakistan</option>
+                                        <option value="Ucrane">Ucrane</option>
+                                        <option value="Canada">Canada</option>
+                                        <option value="Dubai">Dubai</option>
+                                    </select>
+                                    <input type="text" placeholder="Zip" name="cus_zip" value="<?php echo $cus_info->cus_zip?>">
+                                    Shipping Same As Billing
+                                    <input type="checkbox" name="shipping_info" value="on">
+                                    <input type="submit" value="Save & Continue" class="btn btn-primary">
+ -->
+
+
+
+
+
+
+
+
                                     <div class="form-group col-md-6">
-                                        <label>First Name</label>
-                                        <input class="form-control" type="text" placeholder="First Name">
+                                        <label>Name</label>
+                                        <input name="cus_name" class="form-control" type="text" placeholder="Name" value="<?php echo $cus_info->cus_name?>">
                                     </div>
-                                    
+                                    <input type="hidden" name="cus_id" value="<?php echo $cus_info->cus_id?>">
                                     <div class="form-group col-md-6">
                                         <label>E-mail</label>
-                                        <input class="form-control" type="text" placeholder="E-mail">
+                                        <input class="form-control" type="text" placeholder="E-mail" name="cus_email" value="<?php echo $cus_info->cus_email?>" readonly="">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Mobile No</label>
-                                        <input class="form-control" type="text" placeholder="Mobile No">
+                                        <input class="form-control" type="text" placeholder="Mobile No" name="cus_mobile" value="<?php echo $cus_info->cus_mobile?>">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Address</label>
-                                        <input class="form-control" type="text" placeholder="Address">
+                                        <input class="form-control" type="text" placeholder="Address" name="cus_address" value="<?php echo $cus_info->cus_address?>">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Country</label>
-                                        <select class="custom-select">
-                                            <option selected>United States</option>
-                                            <option>Afghanistan</option>
-                                            <option>Albania</option>
-                                            <option>Algeria</option>
+                                        <select class="custom-select" name="cus_country" value="<?php echo $cus_info->cus_country?>">
+                                            <option>-- Country --</option>
+                                            <option value="United_States" >United States</option>
+                                            <option value="Bangladesh">Bangladesh</option>
+                                            <option value="UK">UK</option>
+                                            <option value="India">India</option>
+                                            <option value="Pakistan">Pakistan</option>
+                                            <option value="Ucrane">Ucrane</option>
+                                            <option value="Canada">Canada</option>
+                                            <option value="Dubai">Dubai</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>City</label>
-                                        <input class="form-control" type="text" placeholder="City">
+                                        <input class="form-control" type="text" placeholder="City" name="cus_city" value="<?php echo $cus_info->cus_city?>">
                                     </div>
                                    
                                     <div class="form-group col-md-6">
                                         <label>ZIP Code</label>
-                                        <input class="form-control" type="text" placeholder="ZIP Code">
+                                        <input class="form-control" type="text" placeholder="ZIP Code" name="cus_zip" value="<?php echo $cus_info->cus_zip?>">
                                     </div>
                                     
                                     <div class="form-group col-md-12">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="shipto">
+                                            <input type="checkbox" class="custom-control-input" id="shipto" name="shipping_info" value="on">
                                             <label class="custom-control-label" for="shipto">Shipping Same As Billing</label>
                                         </div>
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <button class="btn btn-block">Save $ Continue</button>
+                                        <button type="submit" class="btn btn-block">Save $ Continue</button>
                                     </div>
                                 </div>
                             </div>
@@ -201,6 +240,11 @@
             </div>
         </div>
         <!-- Checkout End -->
+
+    <script type="text/javascript">
+        document.forms['billing_info'].elements['cus_country'].value=<?php echo $cus_info->cus_country?>
+
+    </script>
         
 
         

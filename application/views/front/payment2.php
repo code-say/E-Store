@@ -1,20 +1,13 @@
-
-<?php $this->load->view('front/header');?>   
-
-<div class="breadcrumb-wrap">
-            <div class="container-fluid">
-                <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="<?php echo base_url();?>">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Products</a></li>
-                    <li class="breadcrumb-item active">Checkout</li>
-                </ul>
-            </div>
-</div>
-<section class="checkout" id="cart_items">
-		<div class="container-fluid">
-			
+<section id="cart_items">
+		<div class="container">
+			<div class="breadcrumbs">
+				<ol class="breadcrumb">
+				  <li><a href="<?php echo base_url();?>">Home</a></li>
+				  <li class="active">Payment</li>
+				</ol>
+			</div>
 			<div class="table-responsive cart_info">
-				<table class="table table-bordered">
+				<table class="table table-condensed">
 					<thead>
 						<tr class="cart_menu">
 							<td class="image">Item</td>
@@ -112,7 +105,7 @@
 							<div class="order-message">
 								<p class="alert alert-warning">Shipping Order</p>
 								<?php echo $this->session->flashdata("flash_msg")?>
-								<textarea class="form-control" name="payment_message"  placeholder="Notes about your order, Special Notes for Delivery" rows="10"></textarea>
+								<textarea name="payment_message"  placeholder="Notes about your order, Special Notes for Delivery" rows="10"></textarea>
 							</div>	
 							<span>
 								<label><input type="radio"  name="payment_gateway" value="cash_on_delivery"> Cash on delivery</label>
@@ -129,5 +122,5 @@
 
 			</div>
 		</div>
-	</section><!--/#do_action--><br><br><br>
-	<?php $this->load->view('front/footer');?>   
+	</section><!--/#do_action-->
+	

@@ -283,7 +283,7 @@
                     <div class="col-lg-3">
                         <div class="product-item">
                             <div class="product-title">
-                                <a href="#"><?php echo $product->pro_title?></a>
+                                <a href="<?php echo base_url()?>product-details/<?php echo $product->pro_id?>"><?php echo $product->pro_title?></a>
                                 <div class="ratting">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -298,13 +298,36 @@
                                 </a>
                                 <div class="product-action">
                                     <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                    <a href="#"><i class="fa fa-heart"></i></a>
+
+                        <form action="<?php echo base_url()?>add-to-WL"  method="post">
+                            
+                            <input type="hidden" value="1" name="qty"/>
+                            <input type="hidden" value="<?php echo $product->pro_id?>" name="pro_id"/>
+                            <button type="submit" class="btn btn-default" >
+                                <i class="fa fa-heart"></i></button>
+                           
+                        </form> 
+
+
+                                    <!-- <a href="#"><i class="fa fa-heart"></i></a> -->
                                     <a href="#"><i class="fa fa-search"></i></a>
                                 </div>
                             </div>
                             <div class="product-price">
                                 <h3><span>$</span><?php echo $product->pro_price?></h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                               <!--  <a class="btn" href="<?php echo base_url()?>add-to-cart/<?php echo $product->pro_id?>"><i class="fa fa-shopping-cart"></i>Buy Now</a> -->
+
+                        <form action="<?php echo base_url()?>add-to-cart"  method="post">
+                            
+                            <input type="hidden" value="1" name="qty"/>
+                            <input type="hidden" value="<?php echo $product->pro_id?>" name="pro_id"/>
+                            <button style="margin:0px" type="submit" class="btn ">
+                                <i class="fa fa-shopping-cart"></i>
+                                Add to cart
+                            </button>
+                            <!-- <a href="<?php echo base_url()?>product-details/<?php echo $product->pro_id?>" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>Details</a> -->
+                        </form>
+
                             </div>
                         </div>
                     </div>

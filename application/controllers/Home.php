@@ -102,7 +102,8 @@ class Home extends CI_Controller {
 		$data['category_brand'] = $this->load->view('front/category','',true);
 		$data['post_by_brand_id'] = $this->HomeModel->show_product_price_range($min_range,$max_range);
 		$data['feature'] = $this->load->view('front/product_list',$data,true);
-		$this->load->view('front/index',$data);
+		//$this->load->view('front/index',$data);
+		$this->load->view('front/product_list',$data);
 
 	}
 	public function contact_page(){
@@ -111,7 +112,8 @@ class Home extends CI_Controller {
 		$data['recommended'] = "";
 		$data['main_content'] = $this->load->view('front/contact_page','',true);
 		$data['category_brand'] = "";
-		$this->load->view('front/index',$data);
+		//$this->load->view('front/index',$data);
+		$this->load->view('front/contact_page',$data);
 	}
 	public function insert_contact_info(){
 			$this->form_validation->set_rules('contact_email', 'Email', 'required|valid_email');

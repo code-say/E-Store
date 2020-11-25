@@ -21,6 +21,32 @@ class Cart extends CI_Controller{
 		$this->cart->insert($data);
 		return redirect("show-cart");
 	}
+
+
+	public function add_to_WL(){
+		$product_id = $this->input->post("pro_id");
+		$qty = $this->input->post("qty");
+		$product_info = $this->CartModel->select_product_info_by_product_id($product_id);
+		$data = array(
+        'id'      => $product_info->pro_id,
+        'qty'     => $qty,
+        'price'   => $product_info->pro_price,
+        'name'    => $product_info->pro_title,
+        'options' => array('pro_image' => $product_info->pro_image)
+			);
+		$this->session->set_userdata("WL",$data);
+		//$this->cart->insert($data);
+		return redirect("show-WL");
+	}
+
+	public function show_WL(){
+		$data['main_content'] = $this->load->view('front/wishlist','',true);
+		//$this->load->view('front/index',$data);
+		$this->load->view('front/wishlist',$data);
+	}
+
+
+
 	public function show_cart(){
 		$data['main_content'] = $this->load->view('front/view_cart','',true);
 		//$this->load->view('front/index',$data);

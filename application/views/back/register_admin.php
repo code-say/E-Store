@@ -23,7 +23,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                            <h5 style='color:red'> <?php echo validation_errors();?></h5>
-                                <?php echo form_open('Admin/makeadmin','');?>
+                                <?php echo form_open_multipart('Admin/makeadmin','');?>
                                 <div class="form-group">
                                     <label>Admin Name</label>
                                     <input type="text" class="form-control" value="<?php echo set_value('username')?>" name="username" required="">
@@ -49,6 +49,10 @@
                                         <option value="3">Author</option>
                                         <option value="4">Editor</option>
                                     </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Add Profile Picture</label>
+                                    <input type="file" name="profile_image">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Make User</button>
                                 <button type="reset" class="btn btn-success">Reset Form</button>

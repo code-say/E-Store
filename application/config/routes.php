@@ -105,10 +105,17 @@ $route['delete-to-cart/(.+)'] = 'Cart/delete_to_cart/$1';
 $route['update-cart-qty'] = 'Cart/update_cart_quantity';
 $route['update-cart-qty-payment'] = 'Cart/update_cart_quantity_payment';
 $route['delete-to-cart-payment/(.+)'] = 'Cart/delete_to_cart_payment/$1';
+
+//wishlist
+$route['add-to-WL'] = 'Cart/add_to_WL';
+$route['show-WL'] = 'Cart/show_WL';
+$route['delete-to-WL/(.+)'] = 'Cart/delete_to_WL/$1';
+
 // Checkout
 $route['checkout'] = 'Checkout/checkout';
 $route['cu-login'] = 'Checkout/cu_login';
 $route['customer-registration'] = 'Checkout/customer_registration';
+$route['cu-registration'] = 'Checkout/customer_registration2';
 $route['customer-login'] = 'Checkout/customer_login';
 $route['billing'] = 'Checkout/billing';
 $route['shipping'] = 'Checkout/shipping';

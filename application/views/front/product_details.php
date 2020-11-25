@@ -52,15 +52,17 @@
                                             <!-- <p>$99 <span>$149</span></p> -->
                                             <p>$<?php echo $product_info->pro_price?><span></span></p>
                                         </div>
+                                        <form action="<?php echo base_url()?>add-to-cart"  method="post">
                                         <div class="quantity">
                                             <h4>Quantity:</h4>
                                             <div class="qty">
                                                 <button class="btn-minus"><i class="fa fa-minus"></i></button>
-                                                <input type="text" value="1">
+                                                <!-- <input type="text" value="1"> -->
+                                                <input type="text" value="1" name="qty"/>
                                                 <button class="btn-plus"><i class="fa fa-plus"></i></button>
                                             </div>
                                         </div>
-                                        <div class="p-size">
+                                        <!-- <div class="p-size">
                                             <h4>Size:</h4>
                                             <div class="btn-group btn-group-sm">
                                                 <button type="button" class="btn">S</button>
@@ -76,10 +78,34 @@
                                                 <button type="button" class="btn">Black</button>
                                                 <button type="button" class="btn">Blue</button>
                                             </div> 
-                                        </div>
+                                        </div> -->
                                         <div class="action">
-                                            <a class="btn" href="#"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
-                                            <a class="btn" href="#"><i class="fa fa-shopping-bag"></i>Buy Now</a>
+
+                                        <p><b>Availability:</b>
+                <?php if($product_info->pro_quantity>0){
+                    echo "In Stock";
+                }elseif($product_info->pro_availability==3){
+                    echo "Up Coming";
+                }else{
+                    echo "Out Of Stock";
+                }?>
+            </p>
+            <p><b>Brand:</b> <?php echo $product_info->brand_name?></p>
+                                            
+                                            <!-- <input type="hidden" value="1" name="qty"/> -->
+                                            <input type="hidden" value="<?php echo $product_info->pro_id?>" name="pro_id"/>
+                                            <button type="submit" class="btn btn-default add-to-cart">
+                                                <i class="fa fa-shopping-cart"></i>
+                                                Add to cart
+                                            </button>
+
+                                            
+                                        </form> 
+
+
+
+                                            <!-- <a class="btn" href="#"><i class="fa fa-shopping-cart"></i>Add to Cart</a> -->
+                                            <!-- <a class="btn" href="#"><i class="fa fa-shopping-bag"></i>Buy Now</a> -->
                                         </div>
                                     </div>
                                 </div>
@@ -103,9 +129,7 @@
                                 <div class="tab-content">
                                     <div id="description" class="container tab-pane active">
                                         <h4>Product description</h4>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum quam ac mi viverra dictum. In efficitur ipsum diam, at dignissim lorem tempor in. Vivamus tempor hendrerit finibus. Nulla tristique viverra nisl, sit amet bibendum ante suscipit non. Praesent in faucibus tellus, sed gravida lacus. Vivamus eu diam eros. Aliquam et sapien eget arcu rhoncus scelerisque. Suspendisse sit amet neque neque. Praesent suscipit et magna eu iaculis. Donec arcu libero, commodo ac est a, malesuada finibus dolor. Aenean in ex eu velit semper fermentum. In leo dui, aliquet sit amet eleifend sit amet, varius in turpis. Maecenas fermentum ut ligula at consectetur. Nullam et tortor leo. 
-                                        </p>
+                                        <?php echo $product_info->pro_desc?>
                                     </div>
                                     <div id="specification" class="container tab-pane fade">
                                         <h4>Product specification</h4>
