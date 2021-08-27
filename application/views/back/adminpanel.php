@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootsrtap Free Admin Template - SIMINTA | Admin Dashboad Template</title>
+    <title>Admin Dashboad </title>
     <!-- Core CSS - Include with every page -->
     <script src="<?php echo base_url()?>assets/back/plugins/jquery-1.10.2.js"></script>
     <link href="<?php echo base_url()?>assets/back/plugins/bootstrap/bootstrap.css" rel="stylesheet" />
@@ -47,10 +47,10 @@
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <span class="top-label label label-danger">
-                             <?php
-                               $all_message = $this->ContactModel->all_contact()[0]->total;
+                        <!-- <?php
+                               $all_message = $this->ContactModel->all_contact()->total;
                                echo $all_message;
-                            ?>
+                            ?> -->
                         </span><i class="fa fa-envelope fa-3x"></i>
                     </a>
                     <!-- dropdown-messages -->
@@ -65,7 +65,7 @@
                         <li>
                             <a href="">
                                 <div>
-                                    <strong><span class=" label label-danger"><?php echo $value->contact_name?></span></strong>
+                                    <strong><span class=" label label-danger">Sayan Mandal</span></strong>
                                     <span class="pull-right text-muted">
                                         <em>
                                             

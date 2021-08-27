@@ -53,7 +53,7 @@
 					<?php foreach ($all_brands as $key => $brand) {	?>
 					<li><a href="<?php echo base_url()?>show-post-by-brand-id/<?php echo $brand->brand_id?>"> <span class="pull-right">
 						<?php
-							$total_brand = $this->HomeModel->get_total_product_by_brand($brand->brand_id)[0]->total;
+							$total_brand = $this->HomeModel->get_total_product_by_brand($brand->brand_id)->total;
 						 ?>
 						 <?php echo "($total_brand)"?>
 					</span><?php echo $brand->brand_name;?></a></li>
