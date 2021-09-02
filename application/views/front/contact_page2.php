@@ -40,7 +40,7 @@
 	    					<p>E-Shopper Inc.</p>
 							<p>935 W. Webster Ave New Streets Chicago, IL 60614, NY</p>
 							<p>Newyork USA</p>
-							<p>Mobile: +2346 17 38 93</p>
+							<p>Mobile: +91-7412589631</p>
 							<p>Fax: 1-714-252-0026</p>
 							<p>Email: info@e-shopper.com</p>
 	    				</address>

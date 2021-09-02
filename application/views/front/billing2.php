@@ -36,10 +36,10 @@
 									<input type="text" placeholder="City" name="cus_city" value="<?php echo $cus_info->cus_city?>">
 									<select name="cus_country" value="<?php echo $cus_info->cus_country?>">
 										<option>-- Country --</option>
+										<option value="India">India</option>
 										<option value="United_States" >United States</option>
 										<option value="Bangladesh">Bangladesh</option>
 										<option value="UK">UK</option>
-										<option value="India">India</option>
 										<option value="Pakistan">Pakistan</option>
 										<option value="Ucrane">Ucrane</option>
 										<option value="Canada">Canada</option>

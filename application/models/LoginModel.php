@@ -19,7 +19,7 @@ class LoginModel extends CI_Model {
 		$data['user_password'] = password_hash($this->input->post('user_password',true),PASSWORD_DEFAULT);
 		$data['user_role'] = $this->input->post('user_role',true);
 		$data['user_status'] = '1';
-		$data['user_photo'] = $profile_image;
+		
 		$this->db->insert('tbl_user',$data);
 	}
 }
